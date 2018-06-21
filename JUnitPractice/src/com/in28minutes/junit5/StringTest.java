@@ -13,5 +13,33 @@ class StringTest {
 		//Always expected vs actual
 		assertEquals(expectedlength, actuallength);
 	}
+	
+	@Test
+	void toUpperCase() {
+		String str = "abcd";
+		String result = str.toUpperCase();
+		assertEquals("ABCD", result);
+		assertNotNull(result);
+	}
+	
+	@Test
+	void contains() {
+		String str = "abcdefgh";
+		boolean result = str.contains("ijk");
+		// assertEquals(false, result);
+		assertFalse(result);
+		//assertTrue
+		assertFalse("abcdefg".contains("ijk"));
+	}
+	
+	@Test
+	void split() {
+		String str = "abc def ghi";
+		String actualResult[] = str.split(" ");
+		String[] expectedResult = new String[] {"abc", "def", "ghi"};
+		assertArrayEquals(actualResult, expectedResult);
+	}
+	
+	
 
 }
